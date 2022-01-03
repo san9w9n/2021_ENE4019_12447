@@ -6,6 +6,8 @@
 -	하지만 이는 client 하나만 연결되었을 때의 상황이고, 실생활에서는 하나의 server의 여러 client가 접속하게 된다. 이때는 멀티 스레드 방식, 혹은 멀티 프로세스 방식을 사용해야한다. 이번 과제에는 멀티 프로세스를 통한 서버-클라이언트 connection을 구현하였다.
 -	Makefile을 이용해 컴파일 했으며, make 명령을 입력하면, client와 server 총 두개의 실행파일이 만들어진다.
 
+![image](https://user-images.githubusercontent.com/67817432/147927294-82a6e173-86f9-4e2b-8a59-9479f405b546.png)
+
 ### server.c
 1)	Listen socket을 만든다. (IP와 PORT는 127.0.0.1:8080으로 설정하였다.)
 2)	bind()와 listen()을 통해 대기열을 만든다. 이때 queue의 size는 5로 설정하였다.
@@ -28,24 +30,29 @@ serv_connect 함수 동작 과정
 
 ### 실행 화면
 1.	Server 연결 대기
+
+ ![image](https://user-images.githubusercontent.com/67817432/147927384-8da26720-33ec-4a2a-a341-a4bfaac3c443.png)
  
 2.	첫번째 Client 연결시도 -> Server 연결 성공
  
-
+![image](https://user-images.githubusercontent.com/67817432/147927448-8518d082-7e3e-40f1-b33d-7dc570fc9987.png)
 
 
 3.	첫번째 client 이름 입력, 메시지 하나 전송. -> 두번째 client 연결 성공.
  	
+![image](https://user-images.githubusercontent.com/67817432/147927471-5dab0af9-117d-4329-bd16-3bf448c14008.png)
+
 4.	두번째 client 이름과 메시지 입력 -> 세번째 client도 연결 성공 후 이름 메시지 입력
  
+![image](https://user-images.githubusercontent.com/67817432/147927479-3b2f6222-7b6f-48d6-aa32-5bf47d2d4cec.png)
+
 5.	메시지 계속 입력하다가 quit 한 번 입력. 
 
-
-
-
-
-
+![image](https://user-images.githubusercontent.com/67817432/147927490-66314811-38b4-4b12-b026-bed3c92d2726.png)
+![image](https://user-images.githubusercontent.com/67817432/147927496-8f34c53d-dec7-4f3d-99db-eede87c7f8a2.png)
 
 6.	남은 client도 quit 입력 후 모두 연결 종료.
+
+![image](https://user-images.githubusercontent.com/67817432/147927507-aca69bb0-6e59-4ea3-8504-c4deddb662cf.png)
 
  
